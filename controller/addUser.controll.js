@@ -11,6 +11,7 @@ var addUserSchema = mongoose.Schema({
   firstName: String,
   lastName: String,
   Position: String,
+  floor: String,
   date: { 
       type: Date, 
       default: Date.now() 
@@ -34,6 +35,7 @@ var addUser = mongoose.model('addUser', addUserSchema);
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         Position: req.body.Position,
+        floor: req.body.floor,
       // var  date = new Date();
       };
 
@@ -79,3 +81,6 @@ addUser
   res.json(addUser);
 });
 }
+
+
+

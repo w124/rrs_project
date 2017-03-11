@@ -45,7 +45,7 @@
 	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 	                    <ul class="nav navbar-nav">
 	                      <li class="dropdown">
-	                        <a href="/signout"><div class="btn btn-primary">Logout</div></a> 
+	                        <a href="/signout"><div class="btn btn-primary"><i class= 'glyphicon glyphicon-off'></i>Logout</div></a> 
 	                      </li>
 	                    </ul>
 	                  </nav>
@@ -63,9 +63,9 @@
                     <!-- Main menu -->
                     <!-- <li class="current"><a href="/home"><i class="glyphicon glyphicon-pencil"></i>Edit Account</a></li> -->
 
-<li class="submenu open">
+					<li class="submenu open">
                          <a href="/home">
-                            <i class="glyphicon glyphicon-pencil"></i> Edit Account
+                            <i class="glyphicon glyphicon-user"></i> Edit Account
                             <span class="caret pull-right"></span>
                          </a>
                          <!-- Sub menu -->
@@ -74,10 +74,23 @@
                             <li><a href="/show">Show admin</a></li>
                         </ul>
                     </li>
+						
+						<li class="submenu open">
+                         <a href="/home">
+                            <i class="glyphicon glyphicon-book"></i> Edit Room
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul style="display: block;">
+                            <li><a href="/home">Add room</a></li>
+                            <li><a href="/show">Show room</a></li>
+                        </ul>
+                    </li>
+                    
 
 
-                    <li><a href="#"><i class="glyphicon glyphicon-stats"></i> Statistics</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
+
+                    <li><a href="#"><i class="glyphicon glyphicon-thumbs-down"></i> Blacklist</a></li>
                     <!-- <li><a href="#"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li> -->
                     <li><a href="#"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                 </ul>
@@ -125,6 +138,11 @@
 								<div class="form-group">
 								<label>Position</label>
 								<input type="text" name="Position" placeholder="position" required="" class="form-control">
+								
+								</div>
+
+								<label> floor</label>
+								<input type="text" name="floor" placeholder="floor" required="" class="form-control">
 								
 								</div>
 

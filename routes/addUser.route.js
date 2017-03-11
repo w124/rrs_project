@@ -5,8 +5,11 @@ module.exports = function (app) {
     .post(user.insert);
 
 app.route('/show')
-	.post(user.show);
+	.get(user.show);
 	
  app.route('/delete')
-     .post(user.delete);    
+     .post(user.delete);
+
+app.route('/showJson')
+     .get(user.showJson);    
 };
