@@ -44,10 +44,14 @@ module.exports = function(passport){
 
 	/* GET Home Page */
 	router.get('/home', isAuthenticated, function(req, res){
-		console.log("Page home OK");
+		console.log("Page accout OK");
 		res.render('home', { user: req.user });	
   	});
 	
+		router.get('/addRoom', isAuthenticated, function(req, res){
+		console.log("Page Room OK");
+		res.render('addRoom', { user: req.user });	
+  	});
 
 	/* Handle Logout */
 	router.get('/signout', function(req, res) {

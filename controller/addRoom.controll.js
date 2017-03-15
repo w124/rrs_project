@@ -24,16 +24,14 @@ var addRoom = mongoose.model('addRoom', addRoomSchema);
 
  
 
-    exports.insert = function(req, res, next) {
+    exports.insertR = function(req, res, next) {
         var  dateTime = new Date();
       var item = {
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        Position: req.body.Position,
+
+        Roomname: req.body.Roomname,
         floor: req.body.floor,
+        member: req.body.member,
+        detail: req.body.detail,
       // var  date = new Date();
       };
 
@@ -41,17 +39,17 @@ var addRoom = mongoose.model('addRoom', addRoomSchema);
       data.save() 
 
 
-      res.redirect('/show');
+      res.redirect('/showRoom');
 };
 
 
- exports.show = function(req, res, next) {
+ exports.showR = function(req, res, next) {
       addRoom.find({}, function(err, response) {
         if (err) {
           return next(err);
         } else {
           
-          res.render('showUser', {items: response});
+          res.render('showRoom', {items: response});
         }
         console.log("show User");
       });
@@ -60,14 +58,14 @@ var addRoom = mongoose.model('addRoom', addRoomSchema);
 
 
 
- exports.delete = function(req, res, next) {
+ exports.deleteR = function(req, res, next) {
       var id = req.body.id;
         addRoom.findByIdAndRemove(id).exec();
         console.log("delete ID")
-        res.redirect('/show');
+        res.redirect('/showRoom');
 };
 
-exports.showJson = function (req, res) {
+exports.showJsonR = function (req, res) {
 addRoom
 .find()
 .populate('File')
